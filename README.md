@@ -57,3 +57,14 @@ XB-UbuntuDrivers-Prebuilt: linux-modules-foo
 
 
 While the former relies on DKMS, the latter will have its matching linux-modules (whose name scheme is described in the ```XB-UbuntuDrivers-Prebuilt``` entry) depending on it, allowing the correct kernel modules to always be updated in sync with the kernel.
+
+
+The packages providing prebuilt kernel modules will then depend on the ```-altkmod``` package, as follows:
+
+```
+linux-modules-foo-$(KERNEL_FLAVOUR):
+Depends:
+ foo-altkmod (>= $(UPSTREAM_VERSION)), foo-altkmod (<= $(UPSTREAM_VERSION)-1)
+```
+
+The versioned dependency is needed when the kernel driver version and the user space version need to match (for compatiblity reasons).
