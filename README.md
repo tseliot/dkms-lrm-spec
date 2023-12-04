@@ -52,8 +52,8 @@ Depends:
  ${misc:Depends}
 Conflicts:
  foo-dkms
-XB-UbuntuDrivers: linux-modules-foo
+XB-UbuntuDrivers-Prebuilt: linux-modules-foo
 ```
 
 
-While the former relies on DKMS, the latter will have its matching linux-modules (whose name scheme is described in the ```XB-UbuntuDrivers``` entry) depending on it, allowing the correct kernel modules to always be updated in sync with the kernel.
+While the former relies on DKMS, the latter will have its matching linux-modules (whose name scheme is described in the ```XB-UbuntuDrivers-Prebuilt``` entry) depending on it, allowing the correct kernel modules to always be updated in sync with the kernel.
